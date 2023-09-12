@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042BCC362AB060BC00E0A9AC /* UIView + Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BCC352AB060BC00E0A9AC /* UIView + Animate.swift */; };
 		046BEB2628439378005B7EEA /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 046BEB2528439378005B7EEA /* city.list.json */; };
 		046BEB2828439591005B7EEA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BEB2728439591005B7EEA /* SearchViewController.swift */; };
 		046BEB2A28439D0C005B7EEA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BEB2928439D0C005B7EEA /* City.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042BCC352AB060BC00E0A9AC /* UIView + Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Animate.swift"; sourceTree = "<group>"; };
 		046BEB2528439378005B7EEA /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		046BEB2728439591005B7EEA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		046BEB2928439D0C005B7EEA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				04A3418C28452BF200C52FCA /* String+DeleteSymbol.swift */,
+				042BCC352AB060BC00E0A9AC /* UIView + Animate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042BCC362AB060BC00E0A9AC /* UIView + Animate.swift in Sources */,
 				049C27AC283FF295004EC9B7 /* WeatherManager.swift in Sources */,
 				049C27A2283FE2E4004EC9B7 /* WeatherTableViewCell.swift in Sources */,
 				04A3418D28452BF200C52FCA /* String+DeleteSymbol.swift in Sources */,

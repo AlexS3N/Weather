@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.backgroundAnimate()
+        view.backgroundAnimate(backgroundImageView)
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -75,15 +75,10 @@ class ViewController: UIViewController {
         self.tableView.register(WeatherTableViewCell.nib(), forCellReuseIdentifier: WeatherTableViewCell.identifier)
         self.tableView.register(HourlyTableViewCell.nib(), forCellReuseIdentifier: HourlyTableViewCell.identifier)
     }
-    
-    func backgroundAnimate() {
-        self.backgroundImageView.frame.origin.x = 0
-        UIView.animate(withDuration: 10, delay: 0, options: [.repeat, .autoreverse], animations: {self.backgroundImageView.frame.origin.x -= 100}, completion: nil)
-    }
 }
 
-    //MARK: - Extensions
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    //MARK: - TableView DataSource
+extension ViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -94,12 +89,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return self.viewModel.weather?.daily?.count ?? 8
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 150
-        }
-        return 50
-    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.identifier, for: indexPath) as? HourlyTableViewCell else {
@@ -121,6 +111,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
+    //MARK: - TableView Delegate
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 150
+        }
+        return 50
+    }
+}
+
 
 
 

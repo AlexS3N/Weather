@@ -80,7 +80,7 @@ struct SearchCellViewModel {
     var state: String
 }
 
-    //MARK: - Extensions
+    //MARK: - LocationManager Delegate
 extension SearchViewModel: CLLocationManagerDelegate {
     private func currentLocation() {
         locationManager.delegate = self

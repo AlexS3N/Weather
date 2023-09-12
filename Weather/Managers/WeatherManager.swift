@@ -4,11 +4,14 @@ import UIKit
 
 class WeatherManager {
     
+    let baseURL = "https://api.openweathermap.org/data/2.5/onecall?"
+    let apiKey = "&appid=1028e8a5db74d76ed0023acad24bde4c&units=metric"
+    
     static let shared = WeatherManager()
     private init(){}
 
     func sendRequestWeather(latitude: Double, longitude: Double, completion: @escaping (WeatherModel?)->()) {
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&lang=en&exclude=minutely&appid=1028e8a5db74d76ed0023acad24bde4c&units=metric") else {
+        guard let url = URL(string: "\(baseURL)" + "lat=\(latitude)" + "&lon=\(longitude)" + "\(apiKey)") else {
             return
         }
         var request = URLRequest(url: url)
